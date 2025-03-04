@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.primary {
+    background-color: #3498db;
+    color: white;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.doctor-info {
+    margin-bottom: 2rem;
+}
+
+.doctor-info h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.doctor-info ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Стили для страницы входа */
+.login-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Стили для панели доктора */
+.doctor-dashboard {
+    padding: 2rem;
+}
+
+.date-selector {
+    margin-bottom: 2rem;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointments-table th,
+.appointments-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.appointments-table th {
+    background-color: #f8f9fa;
+}
+
+.blocked {
+    background-color: #ffebee;
+}
+
+.occupied {
+    background-color: #fff3e0;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #f8f9fa;
+    --text-color: #2c3e50;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row; /* Меняем направление на горизонтальное */
+    align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    gap: 4rem; /* Добавляем промежуток между изображением и текстом */
+    background-color:  #2c3e50;
+    padding: 4rem 2rem; /* Добавляем боковые отступы */
+    text-align: left; /* Меняем выравнивание текста на левое */
+}
+
+.doctor-image {
+    width: 300px; /* Фиксированная ширина изображения */
+    height: auto; /* Сохраняем пропорции */
+    flex-shrink: 0; /* Запрещаем уменьшение изображения */
+}
+
+.hero-content {
+    max-width: 600px; /* Ограничиваем ширину текстового блока */
+    padding: 0;
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Возвращаем вертикальное расположение */
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .doctor-image {
+        width: 200px; /* Уменьшаем изображение на мобильных */
+    }
+    
+    .hero-content {
+        text-align: center; /* Центрируем текст на мобильных */
+    }
+}
+.doctor-name {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.doctor-title {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience {
+    font-size: 1.2rem;
+    color: white
+}
+
+.info-section {
+    padding: 4rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.info-card {
+    background: #2c3e50;
+    color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.price-card {
+    background: #2c3e50;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:  white ;
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav-controls {
+        gap: 1rem;
+    }
+
+    .nav-buttons {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .logo span {
+        display: none; /* Скрываем текст логотипа на маленьких экранах */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo span {
+        display: none; /* Скрываем текст логотипа на маленьких экранах */
+    }
+}
+
+/* Стили для выделения времени */
+.time-occupied {
+    color: #e74c3c !important;
+    background-color: #ffebee !important;
+}
+
+.time-blocked {
+    color: #7f8c8d !important;
+    background-color: #f5f6fa !important;
+}
+
+select option:disabled {
+    font-style: italic;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Изначально форма скрыта */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Упрощенные стили для выпадающего списка времени */
+#appointmentTime {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#appointmentTime option {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+#appointmentTime option:disabled {
+    background-color: #f8f9fa;
+    color: #e74c3c;
+    font-style: italic;
+}
+
+.time-available {
+    color: #2ecc71;
+}
+
+.time-occupied {
+    color: #e74c3c;
+}
+
+/* Стили для профиля доктора */
+.doctor-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.doctor-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Стили для карточки с ценами */
+.price-card {
+    background:  #2c3e50;   
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.price-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price {
+    font-weight: bold;
+    color: white;
+    margin-top: 0.5rem;
+}
+.price-title {
+    color: white;
+}
+
+
+/* Стили для аккордеона */
+.accordion {
+    margin-bottom: 2rem;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 1rem;
+    background:  #2c3e50;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.accordion-button::after {
+    content: '+';
+    font-size: 1.5rem;
+}
+
+.accordion-button.active::after {
+    content: '-';
+}
+
+.accordion-content {
+    display: none;
+    padding: 1rem;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+.pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.license-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (min-width: 768px) {
+    .doctor-profile {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .doctor-image {
+        max-width: 250px;
+    }
+
+    .price-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .price-item {
+        border-bottom: none;
+        border-right: 1px solid #eee;
+        height: 100%;
+    }
+
+    .price-item:last-child {
+        border-right: none;
+    }
+} 
